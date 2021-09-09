@@ -1,0 +1,25 @@
+--Dados três números, quantos estão acima da media?
+acimaMed :: Float -> Float -> Float -> Int
+acimaMed x y z
+ |x>media && y>media || y>media && z>media || x>media && z>media =2
+ |x>media || y>media || z>media=1
+ |otherwise =0
+ where
+ media = (x+y+z)/3
+ --Dados três inteiros, quantos são iguais?
+ quantosIguais :: Int -> Int -> Int -> Int
+ quantosIguais x y z
+  |x==y && y==z                                  =3
+  |x==y || z==x || z==y                          =2
+  |otherwise                                     =0
+
+ --Dados três inteiros, quantos são únicos?
+ --1 1 1 = 0
+ --2 1 1 = 1
+ --2 3 4 = 3
+ quantosUnicos :: Int -> Int -> Int -> Int
+ quantosUnicos x y z
+ |x == z && y==z         = 0
+ |x /= y && y/=z && x/=z = 3
+ |otherwise              = 1
+ 
